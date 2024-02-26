@@ -9,10 +9,7 @@ public class Monk extends Unit {
         super(name, 150, "null", 0, 4, 10, 50, 40, new Position(x,y));
         healing = 0;
     }
-    @Override
-    public String toString(){
-        return name;
-    }
+
 
 
 
@@ -20,4 +17,8 @@ public class Monk extends Unit {
     public void step(ArrayList<Unit> enemy, ArrayList<Unit> friend) {
 
     }
+
+    public String getInfo(){
+        return "Монах";
+    };
 }

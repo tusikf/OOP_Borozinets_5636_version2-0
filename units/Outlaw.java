@@ -9,10 +9,7 @@ public class Outlaw extends Unit {
         super(name, 150, "blade", 30, 6, 15, 50, 80, new Position(x,y));
         theft = 10;
     }
-    @Override
-    public String toString(){
-        return name;
-    }
+
 
 
     @Override
@@ -35,10 +32,14 @@ public class Outlaw extends Unit {
             newposition.y += diff.y < 0 ? 1 : -1;
 
         for (Unit unit : friend) {
-            if (unit.position.equals(newposition)) return;
+            if (unit.position.equals(newposition) && unit.health > 0) return;
 
         }
         this.position = newposition;
 
     }
+
+    public String getInfo(){
+        return "Разбойник";
+    };
 }

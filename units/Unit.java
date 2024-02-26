@@ -16,7 +16,7 @@ public abstract class Unit implements MyInterface{
     int y;
 
     String className;
-    Position position;
+    public Position position;
 
     public Unit(String name, int health, String weapon, int powerHit, int speed, int bronya, int atackRange, int hidding, Position position){
         this.className = this.getClass().getSimpleName();
@@ -36,13 +36,14 @@ public abstract class Unit implements MyInterface{
 
 
     // Метод вывода информации о персонаже
-    public void print() {
-        System.out.println("units.Unit: " + className + ", Name: " + name + ", Health: " + health + ", Weapon: " + weapon + ", PowerHit: " + powerHit + ", Speed: " + speed + ", Bronya: " + bronya + ", AtackRange: " + atackRange + ", Hidding: " + hidding +"units.Position: " + position.getX() + "," + position.getY() + ".");
+    @Override
+    public String toString() {
+        return  name + ", \u2665: " + health + ",  ⚔ : " + powerHit + ", \uD83D\uDEE1\uFE0F :" + bronya;
     }
 
     // Метод вывода короткой информации о персонаже
     public void printShort() {
-        System.out.println("units.Unit: " + className + ", Name: " + name +", units.Position: " + position.getX() + "," + position.getY() + ".");
+        System.out.println(className + ", Name: " + name +", P: " + position.getX() + "," + position.getY() + ".");
     }
 
     // Метод нанесения урона
@@ -94,6 +95,14 @@ public abstract class Unit implements MyInterface{
     public int getSpeed() {
         return speed;
     }
+
+    public int getHp(){
+        return health;
+    };
+
+    public String getInfo(){
+        return " ";
+    };
 }
 
 
