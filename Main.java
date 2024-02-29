@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) {
         Random random = new Random();
 
-        // Заполняем команды рандомом. Но одинаковыми персонажами, чтобы силы команд были равны.
+        // Заполняем команды рандомом. Метод init
         init();
 
 

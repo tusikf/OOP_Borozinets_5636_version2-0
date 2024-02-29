@@ -26,14 +26,25 @@ public class Crossbowman extends Unit {
     public void step(ArrayList<Unit> enemy, ArrayList<Unit> friend) {
         if ((health<=0) || (countArrow == 0)) return;
         Unit target = super.nearestEnemy(enemy);
+        if (target == null) return;
         target.getHit(this.powerHit);
+
+        for (Unit unit : friend) {
+            if (unit.getInfo().equals("Фермер") && !((Peasant)unit).flag) {
+                ((Peasant)unit).flag = true;
+                return;
+            }
+
+        }
         countArrow--;
 
 
 
 
     }
-
+    public int getCountArrow() {
+        return countArrow;
+    }
     public String getInfo(){
         return "Арбалетчик";
     };

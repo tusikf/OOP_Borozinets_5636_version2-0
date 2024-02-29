@@ -21,6 +21,7 @@ public class Sniper extends Unit {
     public void step(ArrayList<Unit> enemy, ArrayList<Unit> friend) {
         if ((health <= 0) || (countArrow == 0)) return;
         Unit target = super.nearestEnemy(enemy);
+        if (target == null) return;
         target.getHit(this.powerHit);
         countArrow--;
     }

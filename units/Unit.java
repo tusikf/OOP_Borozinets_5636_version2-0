@@ -1,4 +1,5 @@
 package units;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public abstract class Unit implements MyInterface{
 
     String className;
     public Position position;
+    ArrayList deadList;
 
     public Unit(String name, int health, String weapon, int powerHit, int speed, int bronya, int atackRange, int hidding, Position position){
         this.className = this.getClass().getSimpleName();
